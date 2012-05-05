@@ -1,7 +1,7 @@
 class Hash
     class << self
 
-        def from_xml(rexml)
+        def from_rexml(rexml)
             xml_elem_to_hash rexml.root
         end
 
