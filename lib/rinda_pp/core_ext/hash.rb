@@ -1,6 +1,14 @@
 class Hash
     class << self
 
+        def keys_by_value(value)
+            ret = []
+            self.each do |key,val|
+                ret << key if val == value
+            end
+            ret.empty? ? nil : ret
+        end
+
         def from_rexml(rexml)
             xml_elem_to_hash rexml.root
         end
