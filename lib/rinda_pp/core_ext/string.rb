@@ -1,5 +1,6 @@
 class String
     def undent
-        gsub(/^\s{,#{split("\n").map{|s| s[/^\s+/].length }.min}}/, '')
+        min_space_num = self.split("\n").delete_if{|s| s=~ /^\s*$/ }.map{|s| s[/^\s*/].length }.min
+        gsub(/^[ \t]{,#{min_space_num}}/, '')
     end
 end
