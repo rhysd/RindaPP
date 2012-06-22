@@ -14,4 +14,8 @@ class Array
         false
     end
 
+    def self.wrap arg
+        arg.class == Array ? arg : [arg]
+    end
+
 end
