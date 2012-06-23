@@ -18,4 +18,12 @@ class Array
         arg.class == Array ? arg : [arg]
     end
 
+    def zip_with *args,&block
+        if block_given?
+            self.zip(*args).map{|a| block.call *a}
+        else
+            self.zip(*args).map{|a,b| a+b }
+        end
+    end
+
 end
